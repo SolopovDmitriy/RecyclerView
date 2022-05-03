@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/13114966/android-how-to-get-view-from-context
+https://medium.com/@smjaejin/easily-reading-and-writing-files-to-internal-storage-with-gson-bdba821ca7de

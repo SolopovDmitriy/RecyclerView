@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/35679776/how-to-set-recyclerview-applayoutmanager-from-xml
