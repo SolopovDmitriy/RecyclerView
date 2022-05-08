@@ -4,26 +4,39 @@ import android.graphics.Typeface;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
 import android.widget.EditText;
 
+import androidx.annotation.ColorInt;
+
 public class TextStyle {
+
+
+
+    // refactor both methods to one method
+
     public static void style(EditText editText, int typeFace){
         SpannableString sp = new SpannableString(editText.getText());
-        StyleSpan styleSpan = new StyleSpan(typeFace);
         sp.setSpan(
-                styleSpan,
+                new StyleSpan(typeFace),
                 editText.getSelectionStart(), editText.getSelectionEnd(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         );
         editText.setText(sp);
-        System.out.println("==========================");
-        System.out.println();
-        StyleSpan[] styleSpans = sp.getSpans(0, editText.getText().length(), StyleSpan.class);
-        for (StyleSpan span: styleSpans) {
-            System.out.println(span);
-        }
-        System.out.println("==========================");
+    }
+
+
+    public static void styleUnderline(EditText editText){
+        SpannableString sp = new SpannableString(editText.getText());
+        sp.setSpan(
+                new UnderlineSpan(),
+                editText.getSelectionStart(), editText.getSelectionEnd(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+        editText.setText(sp);
     }
 
 
@@ -58,8 +71,28 @@ public class TextStyle {
             spanRemover.RemoveAll(spannable,startSelection,endSelection);
         }
 
+    public static void setColor(EditText editText, @ColorInt int color){
+        SpannableString sp = new SpannableString(editText.getText());
+        ForegroundColorSpan styleSpan = new ForegroundColorSpan(color);
+        sp.setSpan(
+                styleSpan,
+                editText.getSelectionStart(),
+                editText.getSelectionEnd(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+        editText.setText(sp);
+    }
 
-
-
+    public static void setBackColor(EditText editText, @ColorInt int color){
+        SpannableString sp = new SpannableString(editText.getText());
+        BackgroundColorSpan colorSpan = new BackgroundColorSpan(color);
+        sp.setSpan(
+                colorSpan,
+                editText.getSelectionStart(),
+                editText.getSelectionEnd(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+        editText.setText(sp);
+    }
 
 }

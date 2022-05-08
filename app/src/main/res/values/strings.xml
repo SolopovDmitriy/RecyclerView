@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Notepad</string>
+    <string name="clearStylesMenu">clear Style</string>
 </resources>

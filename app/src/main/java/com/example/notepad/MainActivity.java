@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent recyclerListIntent = new Intent(MainActivity.this, RecyclerActivity.class);
                 MainActivity.this.startActivity(recyclerListIntent);
                 break;
+
+
         }
 
         return true;

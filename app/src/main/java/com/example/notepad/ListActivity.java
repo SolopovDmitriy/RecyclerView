@@ -35,14 +35,14 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         DBManager dbManager = new DBManager(this);
-        notes = Arrays.asList(
-                new Note(0, "Tank", LocalDateTime.now(), "Tiger - Panzerkampfwagen VI Ausf.H - E, «Тигр» — немецкий тяжёлый танк времён Второй мировой войны, прототипом которого являлся танк VK4501, разработанный в 1942 году фирмой «Хеншель»."),
-                new Note(0, "Airplane", LocalDateTime.now(), "Истреби́тель — военный самолёт, предназначенный в первую очередь для уничтожения воздушных целей противника."),
-                new Note(0, "Submarine", LocalDateTime.now(), "Подво́дная ло́дка — класс кораблей, способных погружаться и длительное время действовать в подводном положении. ")
-        );
-        for(Note note : notes){
-            dbManager.save(note);
-        }
+//        notes = Arrays.asList(
+//                new Note(0, "Tank", LocalDateTime.now(), "Tiger - Panzerkampfwagen VI Ausf.H - E, «Тигр» — немецкий тяжёлый танк времён Второй мировой войны, прототипом которого являлся танк VK4501, разработанный в 1942 году фирмой «Хеншель»."),
+//                new Note(0, "Airplane", LocalDateTime.now(), "Истреби́тель — военный самолёт, предназначенный в первую очередь для уничтожения воздушных целей противника."),
+//                new Note(0, "Submarine", LocalDateTime.now(), "Подво́дная ло́дка — класс кораблей, способных погружаться и длительное время действовать в подводном положении. ")
+//        );
+//        for(Note note : notes){
+//            dbManager.save(note);
+//        }
         notes= dbManager.findAllToList();
         notes.forEach(note -> Log.e("FF", note.toString() + "\n"));
 

@@ -44,6 +44,7 @@ public class Note implements Serializable {
         this.header = header;
     }
 
+
     public LocalDateTime getTime() {
         return time;
     }
